@@ -11,7 +11,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.qa.ims.persistence.domain.Customer;
+import com.qa.ims.persistence.domain.Items;
 import com.qa.ims.persistence.domain.Orders;
 import com.qa.ims.utils.DBUtils;
 
@@ -21,9 +21,10 @@ public class OrdersDAO implements Dao<Orders> {
 	
 	public Orders modelFromResultSet (ResultSet resultSet) throws SQLException {
 		Long id = resultSet.getLong("id");
-		Long customerID = resultSet.getLong("CustomerID");
-		Long items_OrderedID = resultSet.getLong("Items_OrderedID");
-		return new Orders(id, customerID, items_OrderedID);
+		int customerID = resultSet.getInt("CustomerID");
+		Double items_value = resultSet.getDouble("Items_value");
+		String items_list = resultSet.getString("Items_list");  //Use string as opposed to List<>
+		return new Orders(id, customerID, items_value, items_list);
 	}
 
 	@Override
@@ -60,11 +61,13 @@ public class OrdersDAO implements Dao<Orders> {
 
 	@Override
 	public Orders create(Orders orders) {
+
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("INSERT INTO orders(customerID, items_orderedID) VALUES (?, ?)");) {
-			statement.setLong(1, orders.getCustomerID());
-			statement.setLong(2, orders.getItems_OrderedID());
+						.prepareStatement("INSERT INTO orders(CustomerID, Items_value, Items_list) VALUES (?, ?, ?)");) {
+			statement.setInt(1, orders.getCustomerID());
+			statement.setDouble(2, orders.getItems_value());
+			statement.setString(3, orders.getItems_list());
 			statement.executeUpdate();
 			return readLatest();
 		} catch (Exception e) {
@@ -94,9 +97,10 @@ public class OrdersDAO implements Dao<Orders> {
 		// TODO Auto-generated method stub
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("UPDATE orders SET CustomerID = ?, Items_OrderedID = ? WHERE id = ?");) {
-			statement.setLong(1, orders.getCustomerID());
-			statement.setLong(2, orders.getItems_OrderedID());
+						.prepareStatement("UPDATE orders SET CustomerID = ?, Items_value = ? WHERE id = ?");) {
+			statement.setInt(1, orders.getCustomerID());
+			statement.setDouble(2, orders.getItems_value());
+			statement.setString(3, orders.getItems_list());
 			statement.setLong(3, orders.getId());
 			statement.executeUpdate();
 			return read(orders.getId());
@@ -123,6 +127,5 @@ public class OrdersDAO implements Dao<Orders> {
 	}
 
 
-	
 
 }

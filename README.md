@@ -1,35 +1,27 @@
 Coverage: 34%
 # Project Title
 
-One Paragraph of project description goes here
+A programme based on Java which would allow an end user to interact with a database, containing CRUD functions
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
+Run the SQL files to create the database. Ensure that you change your login details on the java db.properties to ensure the two connect.
+The user then should be able to interact with the CLI.
 
 What things you need to install the software and how to install them
+Java
+SQL
+Maven
 
-```
-Give examples
-```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+The user can follow an online tutorial on google/youtube for a guide on running the relevant software. Some links can be found below
+Java installation: https://www.youtube.com/watch?v=i8rjkre_RYw
+Maven installation: https://www.youtube.com/watch?v=RfCWg5ay5B0
+SQL installation: https://www.youtube.com/watch?v=OM4aZJW_Ojs
 
-Say what the step will be
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
 
 End with an example of getting some data out of the system or using it for a little demo
 
@@ -39,30 +31,9 @@ Explain how to run the automated tests for this system. Break down into which te
 
 ### Unit Tests 
 
-Explain what these tests test, why and how to run them
+Tests can be run in the file, following the test/java directory. these test whether or not a instructions works as intended.
 
-```
-Give an example
-```
 
-### Integration Tests 
-Explain what these tests test, why and how to run them
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
@@ -75,6 +46,7 @@ We use [SemVer](http://semver.org/) for versioning.
 ## Authors
 
 * **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+* Hassan Mahmood - https://github.com/Hassanm786/ims-project-hassan
 
 ## License
 
@@ -84,6 +56,6 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+A huge thank you to the QA trainers, especially Aswene who was a great tutor.
+Also a thank you to my family for supporting me through a very hard week
+Last but not least, team Blue for always supporting and collaborating with one another!

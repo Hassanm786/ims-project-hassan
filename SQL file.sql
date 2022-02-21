@@ -1,0 +1,2 @@
+use ims;
+select o.id as "Order Id", c.first_name as "First Name", c.surname as "Last Name", i.itemName as "Item Name", i.itemPrice as "Item Price"from customers c, orders o, items i, order_items oi where c.id = o.customerId and i.id = oi.itemId and o.id = oi.orderId;

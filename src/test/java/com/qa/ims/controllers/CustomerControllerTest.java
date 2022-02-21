@@ -31,7 +31,7 @@ public class CustomerControllerTest {
 
 	@Test
 	public void testCreate() {
-		final String F_NAME = "barry", L_NAME = "scott";
+		final String F_NAME = "hassan", L_NAME = "mahmood";
 		final Customer created = new Customer(F_NAME, L_NAME);
 
 		Mockito.when(utils.getString()).thenReturn(F_NAME, L_NAME);

@@ -43,7 +43,7 @@ Tests can be run in the file, following the test/java directory. these test whet
 
 We use [SemVer](http://semver.org/) for versioning.
 
-
+## Author
 * Hassan Mahmood - https://github.com/Hassanm786/ims-project-hassan
 
 

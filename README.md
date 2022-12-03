@@ -43,19 +43,9 @@ Tests can be run in the file, following the test/java directory. these test whet
 
 We use [SemVer](http://semver.org/) for versioning.
 
-## Authors
 
-* **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
 * Hassan Mahmood - https://github.com/Hassanm786/ims-project-hassan
 
-## License
 
-This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) file for details 
 
-*For help in [Choosing a license](https://choosealicense.com/)*
 
-## Acknowledgments
-
-A huge thank you to the QA trainers, especially Aswene who was a great tutor.
-Also a thank you to my family for supporting me through a very hard week
-Last but not least, team Blue for always supporting and collaborating with one another!
